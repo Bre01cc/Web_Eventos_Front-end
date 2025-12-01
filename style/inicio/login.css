@@ -4,25 +4,88 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+ul {
+    list-style: none;
+}
+
 body {
     height: 100vh;
     width: 100vw;
-    background-image: url(./img/fundo.png);
+    background-image: url(../../img/fundo.png);
     background-repeat: no-repeat;
     background-size: cover;
     font-family: "Inter", sans-serif;
     overflow: hidden;
 }
 
+.active {
+    display: flex;
+}
+
+.disable {
+    display: none;
+}
+
 .transparencia {
     height: 100%;
-    width: 100vw;
+    width: 100%;
     background-color: rgba(41, 28, 44, 0.8);
     display: flex;
     align-items: center;
     padding-top: 20%;
     justify-content: space-around;
     flex-direction: column;
+    position: relative;
+    
+    .mensagem-erro {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+        z-index: 999;
+        background-color: rgba(0, 0, 0, 0.5);
+
+        .caixa-erro {
+            width: 85%;
+            border-radius: 2px;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            height: 15%;
+            gap: 5px;
+            padding-bottom: 5px;
+            align-items: center;
+
+            .texto-mensagem-erro {
+                height: 75%;
+                width: 90%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-bottom: 2px solid #919191 ;
+
+                .mensagem-erro-text{
+                    height: 60%;
+                    font-size: 0.8rem;
+                    display: flex;
+                    align-items: center;
+                    color: red;
+                    justify-content: center;
+                    background-color: rgba(255, 16, 16, 0.4);
+                    width: 100%;
+                }
+            }
+            .bnt-erro{
+                height: 25px;
+                width: 100px;
+            }
+        }
+    }
 
     header {
         display: flex;
@@ -53,13 +116,12 @@ body {
     }
 
     main {
-        height: 50%;
+        height: 45%;
         width: 100%;
         display: flex;
+        flex-direction: column;
         padding-top: 10%;
-        justify-content: center;
-        /* align-items: center; */
-        /* background-color: aqua; */
+        gap: 5vh;
 
         .campos-cadastro {
             height: auto;
@@ -103,7 +165,7 @@ body {
             }
 
             .acessar {
-                margin-top:5px;
+                margin-top: 5px;
                 font-size: 0.7rem;
                 background-color: #FA862A;
                 color: #fff;
@@ -113,20 +175,36 @@ body {
                 border-radius: 5px;
                 cursor: pointer;
             }
-            .senha{
+
+            .senha {
                 color: #fff;
                 font-size: 0.7rem;
             }
         }
+
+        .criarConta {
+            color: #fff;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.7rem;
+        }
+
+        .criarConta a {
+            color: #FA862A;
+        }
     }
-    footer{
+
+    footer {
         /* background-color: aqua; */
         text-align: center;
         font-size: 12px;
         padding-inline: 10px;
         color: #fff;
     }
-    footer span{
+
+    footer span {
         font-weight: 700;
     }
 }
